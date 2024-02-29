@@ -6,7 +6,9 @@ body{
     padding: 4rem;
     background: map-get(variables.$gradientVars, "mainBackground");
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 4rem;
     font-family: map-get(variables.$fontVars, "mainFont");
 }
