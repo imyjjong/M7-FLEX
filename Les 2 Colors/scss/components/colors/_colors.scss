@@ -1,0 +1,59 @@
+@use "../../abstract/variables.scss";
+@use "../../abstract/animations.scss";
+
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    list-style: none;
+    background: white;
+    padding: 4rem;
+    max-width: 160rem;
+
+    &__color{
+        width: 25rem;
+        flex-grow: 1;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 0.1rem solid map-get(variables.$borderVars, "colorBorder");
+        overflow: hidden;
+        transition: 0.2s;
+        animation-name: popupCard;
+        animation-duration: 0.6s;
+        animation-fill-mode: backwards;
+
+        @for $i from 1 through 100{
+            &:nth-of-type(#{$i}){
+                animation-delay: $i / 10 + s;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+            transform: translateY(-0.5rem);
+        }
+
+        &Circle{
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+
+            &--selected{
+                transform: scale(2);
+            }
+        }
+
+        &Text{
+            position: absolute;
+            animation-name: popup;
+            animation-duration: 0.6s;
+            display: none;
+        }
+
+        &Circle--selected + &Text{
+            display: block;
+        }
+    }
+}
