@@ -1,0 +1,10 @@
+@use "variables.scss";
+
+body{
+    min-height: 100vh;
+    font-size: 2rem;
+    font-family: map-get(variables.$baseColors, "font");
+    background: map-get(variables.$baseColors, "background");
+    color: map-get(variables.$baseColors, "color");
+    padding: map-get(variables.$vhCalc, "bodyPadding");
+}

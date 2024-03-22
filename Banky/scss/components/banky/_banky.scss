@@ -1,0 +1,159 @@
+@use "../../abstract/variables.scss";
+
+.banky{
+    background: white;
+    min-height: calc(100vh - map-get(variables.$vhCalc, "headerHeight") - map-get(variables.$vhCalc, "bodyPadding") * 2 );
+    display: grid;
+    grid-template-columns: 40% 60%;
+    padding: 4rem;
+    max-width: 110rem;
+    margin: 0 auto;
+
+    &Section{
+        display: flex;
+
+        &--left{
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        &__header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &--wrapper{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+            }
+
+            &--logo{
+                border-radius: 50%;
+                font-size: 2.5rem;
+                background: map-get(variables.$accentColors, "icons");
+                color: map-get(variables.$accentColors, "color");
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 5rem;
+                height: 5rem;
+                transition: 0.2s all;
+            }
+
+            &--money{
+                font-weight: 700;
+                font-size: 200%;
+                color: darken(map-get(variables.$accentColors, "eye"), 15%);
+            }
+
+            &--eye{
+                border-radius: 50%;
+                font-size: 2rem;
+                background: map-get(variables.$accentColors, "eye");
+                color: map-get(variables.$accentColors, "color");
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+
+        &__transactions{
+            list-style: none;
+            padding: 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            height: 35rem;
+            overflow-y: scroll;
+
+            &--transaction{
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 100%;
+                padding-bottom: 0.5rem;
+
+                &::after{
+                    content: "";
+                    width: 100%;
+                    height: 3%;
+                    background: map-get(variables.$accentColors, "icons");
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    border: 0.2rem;
+                }
+
+                &-name{
+                    font-weight: 300;
+                    font-size: 120%;
+                }
+
+                &-amount{
+                    font-weight: 300;
+                    font-size: 120%;
+                }
+            }
+        }
+
+        &__transferButton{
+            background: map-get(variables.$accentColors, "icons");
+            border: none;
+            font-size: 100%;
+            border-radius: 0.3rem;
+            padding: 0.5rem 1rem;
+            color: map-get(variables.$baseColors, "color");
+            margin-top: 2rem;
+            box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.2);
+            transition: 0.2s;
+
+            &:hover{
+                cursor: pointer;
+                background: darken(map-get(variables.$accentColors, "icons"), 2%);
+            }
+        }
+
+        &__accounts{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            gap: 4rem;
+            align-items: center;
+
+            &--account{
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                &-name{
+                    font-weight: 400;
+                }
+            }
+        }
+
+        &__switchAccount, &__eyeButton{
+            background: none;
+            border: none;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            &:hover .bankySection__header--logo{
+                background: darken(map-get(variables.$accentColors, "icons"), 5%);
+            }
+
+            &:hover .bankySection__header--eye{
+                background: darken(map-get(variables.$accentColors, "eye"), 5%);
+            }
+        }
+    }
+}

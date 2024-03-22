@@ -1,0 +1,248 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 2rem;
+  font-family: sans-serif;
+  background: #1D5B79;
+  color: #000000;
+  padding: 4rem;
+}
+
+.header {
+  background: white;
+  height: 8rem;
+  font-family: "Alata";
+  padding: 2rem 0;
+  max-width: 110rem;
+  margin: 0 auto;
+  border-radius: 2rem 2rem 0 0;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  justify-content: center;
+  align-items: center;
+}
+.headerFigure {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 150%;
+  gap: 1rem;
+  color: #040e12;
+}
+.headerFigure__logo {
+  font-size: 150%;
+}
+.headerAvatar {
+  background: #1D5B79;
+  padding: 1rem;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  overflow: hidden;
+}
+.headerAvatar__icon {
+  position: absolute;
+  top: 1.6rem;
+  font-size: 4.5rem;
+  color: #3199cb;
+}
+
+.banky {
+  background: white;
+  min-height: calc(100vh - 8rem - 8rem);
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 4rem;
+  max-width: 110rem;
+  margin: 0 auto;
+}
+.bankySection {
+  display: flex;
+}
+.bankySection--left {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.bankySection__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bankySection__header--wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.bankySection__header--logo {
+  border-radius: 50%;
+  font-size: 2.5rem;
+  background: #468B97;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  transition: 0.2s all;
+}
+.bankySection__header--money {
+  font-weight: 700;
+  font-size: 200%;
+  color: #0e2d3b;
+}
+.bankySection__header--eye {
+  border-radius: 50%;
+  font-size: 2rem;
+  background: #1D5B79;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+}
+.bankySection__transactions {
+  list-style: none;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 35rem;
+  overflow-y: scroll;
+}
+.bankySection__transactions--transaction {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 100%;
+  padding-bottom: 0.5rem;
+}
+.bankySection__transactions--transaction::after {
+  content: "";
+  width: 100%;
+  height: 3%;
+  background: #468B97;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 0.2rem;
+}
+.bankySection__transactions--transaction-name {
+  font-weight: 300;
+  font-size: 120%;
+}
+.bankySection__transactions--transaction-amount {
+  font-weight: 300;
+  font-size: 120%;
+}
+.bankySection__transferButton {
+  background: #468B97;
+  border: none;
+  font-size: 100%;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  color: #000000;
+  margin-top: 2rem;
+  box-shadow: 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+.bankySection__transferButton:hover {
+  cursor: pointer;
+  background: #438590;
+}
+.bankySection__accounts {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  gap: 4rem;
+  align-items: center;
+}
+.bankySection__accounts--account {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bankySection__accounts--account-name {
+  font-weight: 400;
+}
+.bankySection__switchAccount, .bankySection__eyeButton {
+  background: none;
+  border: none;
+}
+.bankySection__switchAccount:hover, .bankySection__eyeButton:hover {
+  cursor: pointer;
+}
+.bankySection__switchAccount:hover .bankySection__header--logo, .bankySection__eyeButton:hover .bankySection__header--logo {
+  background: #3e7b86;
+}
+.bankySection__switchAccount:hover .bankySection__header--eye, .bankySection__eyeButton:hover .bankySection__header--eye {
+  background: #184c64;
+}
+
+::-webkit-scrollbar {
+  background: #277aa2;
+  width: 1rem;
+  border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1D5B79;
+  border-radius: 5rem;
+}
+
+@media screen and (max-width: 62.5rem) {
+  .banky {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+  .bankySection__accounts {
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  .bankySection__accounts::after {
+    content: "";
+    width: 100%;
+    height: 0.1rem;
+    background: #468B97;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: 0.2rem;
+  }
+}
+@media screen and (max-width: 37.5rem) {
+  body {
+    padding: 0;
+  }
+  .header {
+    border-radius: 0rem;
+    background: #1D5B79;
+  }
+  .headerFigure {
+    color: white;
+  }
+  .bankySection__transactions {
+    height: auto;
+    overflow: auto;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,12 @@
+@use "../../abstract/variables.scss";
+
+::-webkit-scrollbar{
+    background: lighten(map-get(variables.$baseColors, "background"), 10%);
+    width: 1rem;
+    border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb{
+    background: map-get(variables.$baseColors, "background");
+    border-radius: 5rem;
+}

@@ -1,0 +1,50 @@
+{
+    "bankaccount": [
+        {
+            "fromTo": "me",
+            "amount": 10
+        }, 
+        {
+            "fromTo": "mew",
+            "amount": 20
+        },
+        {
+            "fromTo": "mef",
+            "amount": -10
+        }, 
+        {
+            "fromTo": "mew",
+            "amount": 200
+        },
+        {
+            "fromTo": "mef",
+            "amount": -10
+        }, 
+        {
+            "fromTo": "mew",
+            "amount": 20
+        },
+        {
+            "fromTo": "mef",
+            "amount": -10
+        }, 
+        {
+            "fromTo": "mew",
+            "amount": 20
+        },
+        {
+            "fromTo": "mef",
+            "amount": -10
+        }
+    ],
+    "zzp": [
+        {
+            "fromTo": "werk",
+            "amount": 10000
+        }, 
+        {
+            "fromTo": "z index",
+            "amount": -25656
+        }
+    ]
+}

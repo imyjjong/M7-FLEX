@@ -1,0 +1,45 @@
+@use "../../abstract/variables.scss";
+
+.header{
+    background: white;
+    height: map-get(variables.$vhCalc, "headerHeight");
+    font-family: map-get(variables.$baseColors, "secondFont");
+    padding: 2rem 0;
+    max-width: 110rem;
+    margin: 0 auto;
+    border-radius: 2rem 2rem 0 0;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    justify-content: center;
+    align-items: center;
+
+    &Figure{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 150%;
+        gap: 1rem;
+        color: darken(map-get(variables.$accentColors, "eye"), 25%);
+
+        &__logo{
+            font-size: 150%;
+        }
+    }
+
+    &Avatar{
+        background: map-get(variables.$baseColors, "background");
+        padding: 1rem;
+        border-radius: 50%;
+        width: 6rem;
+        height: 6rem;
+        position: relative;
+        overflow: hidden;
+
+        &__icon{
+            position: absolute;
+            top: 1.6rem;
+            font-size: 4.5rem;
+            color: lighten(map-get(variables.$accentColors, "eye"), 20%);
+        }
+    }
+}
